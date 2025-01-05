@@ -23,6 +23,6 @@ internal class CreateProductCommandHandler(IDocumentSession session) : ICommandH
         await session.SaveChangesAsync(cancellationToken);
 
         //return result
-        return new CreateProductResult(Guid.NewGuid());
+        return new CreateProductResult(product.Id);
     }
 }
